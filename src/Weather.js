@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import FormattedDate from "./FormattedDate";
+import WeatherInfo from "./WeatherInfo";
 import "./Weather.css";
 
 export default function Weather(props) {
@@ -42,32 +42,7 @@ export default function Weather(props) {
             </div>
           </div>
         </form>
-        <h1>Seattle</h1>
-        <ul>
-          <li>
-            <FormattedDate date={weatherData.date} />
-          </li>
-          <li className="text-capitalize">Mostly Cloudy</li>
-        </ul>{" "}
-        <div className="row mt-3">
-          <div className="col-6">
-            <img
-              src="https://static.vecteezy.com/system/resources/previews/008/310/370/original/partly-cloudy-i-flat-multicolor-icon-vector.jpg"
-              alt="partly cloudy"
-            />
-            <span className="current-temperature">
-              {Math.round(weatherData.temperature)}
-            </span>
-            <span className="temperature-unit">°F</span>
-          </div>
-          <div className="col-6">
-            <ul>
-              <li>Precipitation: 15%</li>
-              <li>Humidity: {weatherData.humidity}%</li>
-              <li>Wind: {Math.round(weatherData.wind)} mph</li>
-            </ul>
-          </div>
-        </div>
+        <WeatherInfo data={weatherData} />
       </div>
     );
   } else {
