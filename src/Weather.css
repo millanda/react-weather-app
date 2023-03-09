@@ -2,7 +2,6 @@
   border: 1px solid black;
   padding: 16px;
   margin: 30px auto;
-  max-width: 600px;
   border-radius: 4px;
   font-family: Arial, Helvetica, sans-serif;
   color: #aacb73;
@@ -25,4 +24,24 @@
   font-weight: 100;
   line-height: 19px;
   list-style: none;
+}
+
+.Weather img {
+  height: 70px;
+  width: 70px;
+  margin-right: 10px;
+}
+
+.Weather .current-temperature {
+  color: #aacb73;
+  font-size: 64px;
+  line-height: 64px;
+  font-weight: 400;
+}
+
+.Weather .temperature-unit {
+  font-size: 19px;
+  font-weight: 400;
+  position: relative;
+  top: -32px;
 }
