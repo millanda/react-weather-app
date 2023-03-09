@@ -13,10 +13,7 @@ export default function WeatherInfo(props) {
       </ul>{" "}
       <div className="row mt-3">
         <div className="col-6">
-          <img
-            src="https://static.vecteezy.com/system/resources/previews/008/310/370/original/partly-cloudy-i-flat-multicolor-icon-vector.jpg"
-            alt="partly cloudy"
-          />
+          <img src={props.data.iconUrl} alt={props.data.description} />
           <span className="current-temperature">
             {Math.round(props.data.temperature)}
           </span>
