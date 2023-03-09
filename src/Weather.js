@@ -2,16 +2,23 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
 
-export default function Weather() {
-  const [ready, setReady] = useState(false);
-  const [temperature, setTemperature] = useState(null);
+export default function Weather(props) {
+  //   const [ready, setReady] = useState(false);
+  const [weatherData, setWeatherData] = useState({ ready: false });
   function handleResponse(response) {
     console.log(response.data);
-    setTemperature(response.data.main.temp);
-    setReady(true);
+
+    setWeatherData({
+      ready: true,
+      temperature: response.data.main.temp,
+      humidity: response.data.main.humidity,
+      description: response.data.weather[0].description,
+      wind: response.data.wind.speed,
+      city: response.data.name,
+    });
   }
 
-  if (ready) {
+  if (weatherData.ready) {
     return (
       <div className="Weather">
         <form>
@@ -36,7 +43,7 @@ export default function Weather() {
         <h1>Seattle</h1>
         <ul>
           <li>Wednesday 07:00</li>
-          <li>Mostly Cloudy</li>
+          <li className="text-capitalize">Mostly Cloudy</li>
         </ul>{" "}
         <div className="row mt-3">
           <div className="col-6">
@@ -44,14 +51,16 @@ export default function Weather() {
               src="https://static.vecteezy.com/system/resources/previews/008/310/370/original/partly-cloudy-i-flat-multicolor-icon-vector.jpg"
               alt="partly cloudy"
             />
-            <span className="current-temperature">44</span>
+            <span className="current-temperature">
+              {Math.round(weatherData.temperature)}
+            </span>
             <span className="temperature-unit">°F</span>
           </div>
           <div className="col-6">
             <ul>
               <li>Precipitation: 15%</li>
-              <li>Humidity: 72%</li>
-              <li>Wind: 12 mph</li>
+              <li>Humidity: {weatherData.humidity}%</li>
+              <li>Wind: {Math.round(weatherData.wind)} mph</li>
             </ul>
           </div>
         </div>
@@ -59,11 +68,9 @@ export default function Weather() {
     );
   } else {
     const apiKey = "b9da97a66329124a9eae273c120a5d07";
-    let city = "Seattle";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=imperial`;
 
     axios.get(apiUrl).then(handleResponse);
-
-    return "Loading...";
+    return <div className="Weather">"Loading..."</div>;
   }
 }
