@@ -20,7 +20,8 @@ export default function Weather(props) {
       wind: response.data.wind.speed,
       city: response.data.name,
       coordinates: response.data.coord,
-      iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
+      // iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
   }
 
