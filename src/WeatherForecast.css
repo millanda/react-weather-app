@@ -6,3 +6,9 @@
     opacity: 0.6;
     margin-left: 5px;
 }
+
+.WeatherForecast i {
+  color: blue;
+  font-size: 30px;
+  margin: 5px;
+}
