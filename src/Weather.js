@@ -21,7 +21,6 @@ export default function Weather(props) {
       city: response.data.name,
       coordinates: response.data.coord,
       icon: response.data.weather[0].icon,
-      // iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     });
   }
 
@@ -35,7 +34,6 @@ export default function Weather(props) {
   function handleSubmit(event) {
     event.preventDefault();
     search();
-    // search for a city/make api call
   }
 
   function handleCityChange(event) {
