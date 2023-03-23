@@ -1,5 +1,6 @@
 .WeatherForecast {
   text-align: center;
+  margin-top: 50px;
 }
 
 .WeatherForecast-temperature-min {
@@ -8,7 +9,7 @@
 }
 
 .WeatherForecast i {
-  color: blue;
+  color: #FFD4D4;
   font-size: 30px;
   margin: 5px;
 }
