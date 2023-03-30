@@ -1,7 +1,4 @@
-.App {
-  /* max-width: 600px; */
-  margin: 0;
-  padding: 0;
+body {
   background-color: #7f9f4b;
 }
 
@@ -12,6 +9,38 @@
 
 .App footer {
   font-size: 12px;
-  margin: 0;
-  background-color: #7f9f4b;
+  margin: -20px;
+  padding-bottom: 30px;
+  text-align: center;
+  background-color: rgb(127, 159, 75);
+}
+
+.App a {
+  color: #ffd4d4;
+}
+.div {
+  display: block;
+  position: relative;
+  top: -2px;
+  height: 200px;
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 734 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill="rgba(83, 105, 49, 1)" d="M 0 0 C 213.5 0 213.5 76 427 76 L 427 76 L 427 0 L 0 0 Z" stroke-width="0"></path> <path fill="rgba(83, 105, 49, 1)" d="M 426 76 C 696.5 76 696.5 -46 967 -46 L 967 -46 L 967 0 L 426 0 Z" stroke-width="0"></path> <path fill="rgba(47, 73, 94, 1)" d="M 966 -46 C 1242.5 -46 1242.5 0 1519 0 L 1519 0 L 1519 0 L 966 0 Z" stroke-width="0"></path></svg>');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 733px) {
+  .div {
+    background-size: contain;
+  }
+}
+
+.div-top {
+  display: block;
+  position: relative;
+  top: -2px;
+  height: 200px;
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 734 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill="rgba(83, 105, 49, 1)" d="M 0 0 C 213.5 0 213.5 76 427 76 L 427 76 L 427 0 L 0 0 Z" stroke-width="0"></path> <path fill="rgba(83, 105, 49, 1)" d="M 426 76 C 696.5 76 696.5 -46 967 -46 L 967 -46 L 967 0 L 426 0 Z" stroke-width="0"></path> <path fill="rgba(47, 73, 94, 1)" d="M 966 -46 C 1242.5 -46 1242.5 0 1519 0 L 1519 0 L 1519 0 L 966 0 Z" stroke-width="0"></path></svg>');
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: rotate(180deg) rotateY(180deg);
 }
