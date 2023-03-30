@@ -18,6 +18,10 @@ body {
 .App a {
   color: #ffd4d4;
 }
+
+.App a:hover {
+  color: #fff;
+}
 .div {
   display: block;
   position: relative;

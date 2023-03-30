@@ -51,3 +51,9 @@
   background-color: #7f9f4b;
   border: 1px solid #ffd4d4;
 }
+
+.Weather .search-button:hover {
+  background-color: #ffd4d4;
+  border: 1px solid #ffd4d4;
+  color: #30302d;
+}

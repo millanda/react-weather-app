@@ -1,3 +1,7 @@
 .WeatherTemperature .temperature-unit a {
     color: #f8a3a3;
 }
+
+.WeatherTemperature .temperature-unit a:hover {
+    color: #fff;
+}
